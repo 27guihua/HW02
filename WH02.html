@@ -1,0 +1,302 @@
+<html>
+<head>
+  <style>
+  td {
+    height: 6em;
+    width: 6em;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    box-shadow: 1px 1px 1px 1px #8de6da;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+
+  td:hover {
+    position: relative;
+    top:-2px;
+    left: 2px;
+
+  }
+  th {
+    height: 3em;
+    width: 15em;
+    font-size: large;
+    text-align: center;
+    position: 20px 50px;
+    box-shadow: 1px 1px 1px 1px #65e29d;
+    border-top-left-radius: 20px;
+     border-top-right-radius: 20px;
+    }
+
+  .cell {
+    height: 6em;
+    width: 6em;
+    
+  }
+
+  .cell > .detail {
+    display: none;
+    border-radius: 20px;
+   
+  }
+
+  .cell > .detail.open {
+    display: block;
+    position: absolute;
+    height: 7em;
+    width: 7em;
+   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   font-size: medium;
+   font-style: italic;
+    background-color: rgb(189, 224, 202);
+  }
+
+</style>
+</head>
+    <body>
+      <table style="opacity:0.9;background-image: url(http://img.mp.itc.cn/upload/20161020/f60fd7a3b66e4b0eb88a5bb44f28d359.gif);
+      background-size: 25%;width:px;margin:100px 100px 50px 160px">
+        <tr>
+          <th colspan="3"><button onclick="document.getElementById('demo').innerHTML=Date()">现在时间是：</button>
+
+            <p id="demo"></p>
+          </th>
+        </tr>
+        <tr>
+          <th>周数:</th>
+          <th>信息1702课程表:</th>
+          <th>日期选择：</th>
+        </tr>
+      <tr>
+      <th>
+      <select name="cars">
+      <option value="1">第一周</option>
+      <option value="2">第二周</option>
+      <option value="3">第三周</option>
+      <option value="4">第四周</option>
+      <option value="5">第五周</option>
+      <option value="6">第六周</option>
+      <option value="7">第七周</option>
+      <option value="8">第八周</option>
+      <option value="9">第九周</option>
+      <option value="10">第十周</option>
+      <option value="11">第十一周</option>
+      <option value="12">第十二周</option>
+      <option value="13">第十三周</option>
+      <option value="14">第十四周</option>
+      <option value="15">第十五周</option>
+      <option value="16">第十六周</option>
+      <option value="17">第十七周</option>
+      <option value="18">第十八周</option>
+      <option value="19">第十九周</option>
+      <option value="20">第二十周</option>
+      </select>
+      </th>
+      <th>2018~2019春季</th>
+      <th><input name="datetime-local" type="datetime-local"/><p></th>
+      </tr>
+      </table>
+    </from>
+</body>
+  <table id="grid" style="opacity:1;background-image: url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1560789852389&di=2c8cb4c8c9375897e138a9c2ec7da55a&imgtype=0&src=http%3A%2F%2Fpic1.58cdn.com.cn%2Fzhuanzh%2Fn_v27336bcf1b5ff403599dae12b2d0a5778.jpg%3Fw%3D750%26h%3D0);
+  background-size: 95%; width:px;margin: 50px 100px 100px 170px;border-radius: 20px;
+   border-radius:20px;"> 
+
+  <script>
+    let i = -1;
+    let j = -1;
+    let f = function(event) {
+          console.log();
+    }
+
+    let tblEl = document.getElementById('grid');
+    for (let i = 0; i < 11; i++) {
+      let trEl = document.createElement('tr');
+      for (let j = 0; j < 8; j++) {
+        let tdEl = document.createElement('td');
+        let divEl = document.createElement('div')
+        divEl.className = 'cell';
+        let detailDivEl = document.createElement('div');
+        detailDivEl.className = 'detail';
+        
+        if((i==1&j==1)||(i==2&j==1))
+        detailDivEl.innerHTML ='一公教@C411(吕成功)';
+
+        if((i==1&j==2)||(i==2&j==2))
+        detailDivEl.innerHTML ='一公教@C211(张蔚)';
+
+        if((i==1&j==3)||(i==2&j==3)||(i==5&j==1)||(i==6&j==1))
+        detailDivEl.innerHTML ='一公教@C105(刘烨)-单周';
+
+        if((i==1&j==4)||(i==2&j==4))
+        detailDivEl.innerHTML ='一公教@B405(单：刘亮*邓华)(双:吴君)';
+
+        if((i==1&j==5)||(i==2&j==5))
+        detailDivEl.innerHTML ='一公教@C219(双)/西区外国语219(单)';
+
+        if((i==3&j==1)||(i==4&j==1)||(i==3&j==3)||(i==4&j==3)||(i==5&j==5)||(i==6&j==5))
+        detailDivEl.innerHTML ='一公教@A120(顾洪英)';
+
+        if((i==3&j==2)||(i==4&j==2)||(i==3&j==4)||(i==4&j==4))
+        detailDivEl.innerHTML ='一公教@C411(赵方方)';
+
+        if((i==3&j==5)||(i==4&j==5))
+        detailDivEl.innerHTML ='一公教@B405(刘亮*邓华)';
+
+        if((i==5&j==2)||(i==6&j==2))
+        detailDivEl.innerHTML ='(5~7周)一公教@C123';
+
+        if((i==5&j==3)||(i==6&j==3))
+        detailDivEl.innerHTML ='一公教@B101(刘晓辉*姜红-单)';
+
+        if((i==5&j==4)||(i==6&j==4))
+        detailDivEl.innerHTML ='@东区健身馆(薛松)';
+
+        if((i==7&j==1)||(i==8&j==1))
+        detailDivEl.innerHTML ='一公教@B303(张亮)';
+
+        if((i==7&j==2)||(i==8&j==2))
+        detailDivEl.innerHTML ='一公教@C109(吴君)';
+
+        if((i==7&j==4)||(i==8&j==4))
+        detailDivEl.innerHTML ='一公教@B101(刘晓辉*姜红)';
+
+        detailDivEl.onmouseout =function(event) {
+          let names = detailDivEl.className.split(' ');
+          names = names.filter((x) => x != 'open')
+          detailDivEl.className = names.join(' ');
+        };
+        divEl.append(detailDivEl);
+      
+        let briefDivEl = document.createElement('div');
+        if(i==0&j==0)
+        briefDivEl.innerHTML ='时间';
+
+        if(i==1&j==0)
+        briefDivEl.innerHTML ='1 08:20~09:05';
+
+        if(i==2&j==0)
+        briefDivEl.innerHTML ='2 09:15~10:00';
+
+        if(i==3&j==0)
+        briefDivEl.innerHTML ='3 10:20~11:05';
+
+        if(i==4&j==0)
+        briefDivEl.innerHTML ='4 11:15~12:00';
+
+        if(i==5&j==0)
+        briefDivEl.innerHTML ='5 14:00~14:45';
+
+        if(i==6&j==0)
+        briefDivEl.innerHTML ='6 14:55~15:40';
+
+        if(i==7&j==0)
+        briefDivEl.innerHTML ='7 16:00~16:45';
+
+        if(i==8&j==0)
+        briefDivEl.innerHTML ='8 16:55~17:40';
+
+        if(i==9&j==0)
+        briefDivEl.innerHTML ='9 18:30~19:15';
+
+        if(i==10&j==0)
+        briefDivEl.innerHTML ='10 19:25~20:10';
+
+        if(i==0&j==1)
+        briefDivEl.innerHTML ='周一';
+
+        if(i==0&j==2)
+        briefDivEl.innerHTML ='周二';
+
+        if(i==0&j==3)
+        briefDivEl.innerHTML ='周三';
+
+        if(i==0&j==4)
+        briefDivEl.innerHTML ='周四';
+
+        if(i==0&j==5)
+        briefDivEl.innerHTML ='周五';
+
+        if(i==0&j==6)
+        briefDivEl.innerHTML ='周六';
+
+        if(i==0&j==7)
+        briefDivEl.innerHTML ='周日';
+
+        if((i==1&j==1)||(i==2&j==1))
+        briefDivEl.innerHTML ='web开发';
+
+        if((i==1&j==2)||(i==2&j==2))
+        briefDivEl.innerHTML ='英语';
+
+        if((i==1&j==3)||(i==2&j==3)||(i==5&j==1)||(i==6&j==1))
+        briefDivEl.innerHTML ='管理信息系统';
+
+        if((i==1&j==4)||(i==2&j==4))
+        briefDivEl.innerHTML ='运营管理/数据库原理';
+
+        if((i==1&j==5)||(i==2&j==5))
+        briefDivEl.innerHTML ='英语/视听说';
+
+        if((i==3&j==1)||(i==4&j==1)||(i==3&j==3)||(i==4&j==3)||(i==5&j==5)||(i==6&j==5))
+        briefDivEl.innerHTML ='毛概';
+
+        if((i==3&j==2)||(i==4&j==2)||(i==3&j==4)||(i==4&j==4))
+        briefDivEl.innerHTML ='管理科学基础';
+
+        if((i==3&j==5)||(i==4&j==5))
+        briefDivEl.innerHTML ='运营管理';
+
+        if((i==5&j==2)||(i==6&j==2))
+        briefDivEl.innerHTML ='形势与政治';
+
+        if((i==5&j==3)||(i==6&j==3))
+        briefDivEl.innerHTML ='会计';
+
+        if((i==5&j==4)||(i==6&j==4))
+        briefDivEl.innerHTML ='体育4';
+
+        if((i==7&j==1)||(i==8&j==1))
+        briefDivEl.innerHTML ='电子商务';
+
+        if((i==7&j==2)||(i==8&j==2))
+        briefDivEl.innerHTML ='数据库原理及应用';
+
+        if((i==7&j==4)||(i==8&j==4))
+        briefDivEl.innerHTML ='会计';
+        
+        divEl.append(briefDivEl);
+
+        tdEl.onclick = function(event) {
+          let names = detailDivEl.className.split(' ');
+
+          if (names.indexOf('open') >= 0) {
+            names = names.filter((x) => x != 'open')
+          } else {
+            names.push('open');
+          }
+
+          console.log(names);
+
+          detailDivEl.className = names.join(' ');
+
+        };
+
+        let classNames = [];
+        if (i==j)
+          classNames.push('main-diag');
+
+        if (i + j == 2)
+          classNames.push('back-diag');
+
+        tdEl.className = classNames.join(' ');
+
+        tdEl.append(divEl);
+        trEl.append(tdEl);
+      }
+      tblEl.append(trEl);
+    }
+  </script>
+</body>
+
+</html>
